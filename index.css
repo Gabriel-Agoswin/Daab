@@ -1,0 +1,140 @@
+*{
+    margin: auto;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /*background-image: url('./img/Background.jpg');*/
+    background-size: cover;
+    background-position: center;
+    /*background-color: #0a583c;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    margin-top: 20px;
+   /* background-color: rgba(255, 255, 255, 0.8); #55e0af*/
+    border-radius: 10px;
+    margin-left: 70px;
+   
+    
+}
+
+.logo {
+    position:absolute;
+    display: inline-block;
+    margin-right: auto;
+    width: 90px;
+    height: 90px;
+    font-size: small;
+    margin-left: -80px;
+   /* margin-top: 20px;*/
+    /*margin-bottom: 20px;*/
+    margin-top: -40px;
+}
+
+.menu {
+    display: inline-block;
+    margin: 15px;
+   /* box-shadow: 1px 10px 10px 0px #333;*/
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: #232323;
+    padding: 10px;
+    transition:background-color 0.3s;
+}
+.menu ul li a:hover {
+   /* background-color: #e2fae5;*/
+    border-radius: 5px;
+    color:#55e0af;
+}
+
+.create{
+
+    color: rgb(235, 238, 239);
+    background-color: #3bbb4c;
+    border-radius: 5px;
+    border: 0;
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-btn:hover, .create:hover{
+    background-color: #55e0af;
+    color: rgb(255, 255, 255);
+}
+
+.search-bar{
+    
+    padding: 10px 210px;
+    padding-left: 25px;
+    background-color: rgb(241, 245, 244);
+    border-radius: 10px;
+    border: 1px solid #232323 ;,
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
+}
+
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
+    border-color: #55e0af;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
+    outline: 0 none;
+}
+
+
+
+.search-bar:active{
+    border: #55e0af;
+
+}
+
+.search-btn{
+   
+    padding: 11px 9px;
+    padding-left: 20px;
+    border-radius:0 8px 8px 0;
+    color: rgb(235, 238, 239);
+    background-color: #3bbb4c;
+    border: 0;
+    cursor: pointer;
+
+}
+
+.search{ 
+    position: relative; 
+    display: inline-block; 
+} 
+
+
+.search button { 
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    border: none; 
+    
+    cursor: pointer; 
+} 
