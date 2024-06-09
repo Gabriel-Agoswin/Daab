@@ -135,6 +135,5 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     top: 0; 
     right: 0; 
     border: none; 
-    
     cursor: pointer; 
 } 
