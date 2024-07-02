@@ -1,0 +1,197 @@
+*{margin:0;padding:0}
+*,::before,::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Manite,san-serif;font-size:16px;font-weight:400;line-height:1;color:#52505e}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+h1,h2,h3{font-weight:700;line-height:1.25;margin:0 0 .5rem}
+.cantainer{max-width:650px;margin:0 auto;padding:0 2em}
+.form-box{display:flex;flex-direction:column;margin-top:5em;border:1px solid #e0e4e7;border-radius:15px;background-color:#f0fffa}
+.form-box .progress{position:relative;padding:2em}
+.logo{font-size:1.75em;font-weight:800;color:#52505e;padding:40px 40px;text-align:center}
+.logo span{color:#3bbb4c}
+.progress ul.progress-steps{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:2em}
+.progress ul.progress-steps li{position:relative;display:flex;align-items:flex-start;margin-bottom:5em}
+
+
+
+.form-box form{
+    align-items: center;
+    width: 100%;
+    padding: 3em 1em;
+}
+form{
+    background-color:white;
+    align-items: center;
+    position: relative;
+    display: inline-block;
+    padding: 20PX;
+}
+
+form button{
+    background-color:rgb(13, 179, 85);
+    align-items: center;
+    color: #f0fffa;
+    padding: 20PX;
+    width: 100%;
+    cursor: pointer;
+    border: 3px solid #56fc6c;
+}
+
+form button:hover{
+    background-color: #0f9d22;
+    border:3px solid #3ffb58;
+}
+
+form > div > div:not(.checkbox){
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+form input{
+    height:40px;
+    padding:0 2em;
+    border-radius: 7px;
+    outline-color:#3bbb4c;
+    border: 1px solid #e0e4e7;;
+    background-color: transparent;
+   
+    flex-direction: column;
+    
+    margin-right: 1em;
+    
+   
+}
+
+form > div{
+    -webkit-animation: fadeIn .6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fadeIn .6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  
+    
+}
+
+
+
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+        -webkit-transform: translateY(10%);
+        transform: translateY(10%);
+
+    }
+
+    100%{
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+
+form label{
+    font-size: 14px;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+
+form label{
+    font-size:12px;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+.form-con h1, .form-con p {
+    align-items: center;
+    margin: 10px;
+    text-align: center;
+}
+
+
+
+/*
+.form-box form{
+    width: 100%;
+    padding: 3em 1em;
+    background-color: white;
+}
+
+
+form > div > div:not(.checkbox){
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+
+
+form label{
+    font-size:14px;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form input{
+    max-width: 70px;
+    text-align: center;
+    margin-right: 1em;
+    height:40px;
+    padding:0 2em;
+    border-radius: 7px;
+    outline-color:#3bbb4c;
+    border: 1px solid #e0e4e7;;
+    background-color: transparent;
+    flex-direction: column;
+    margin-right: 1em;
+}
+
+
+
+form .checkbox input{
+    height: auto;
+}
+
+
+form > div:not(){
+    
+-webkit-animation: fadeIn .6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+animation: fadeIn .6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+        -webkit-transform: translateY(10%);
+        transform: translateY(10%);
+
+    }
+
+    100%{
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+form button{
+    background-color:rgb(13, 179, 85);
+    align-items: center;
+    color: #f0fffa;
+    padding: 20PX;
+    width: 100%;
+    cursor: pointer;
+    border: 3px solid #56fc6c;
+}
+
+form button:hover{
+    background-color: #0f9d22;
+    border:3px solid #3ffb58;
+}
+    */
