@@ -13,6 +13,7 @@ nextButton.addEventListener('click', () =>{
 
     updateProgress();
 })
+
 prevButton.addEventListener('click', () =>{
     active--;
     if(active < 1){
@@ -23,15 +24,12 @@ prevButton.addEventListener('click', () =>{
 })
 
 const updateProgress = () =>{
-    console.log('steps.length =>'+ steps.length);
-    console.log('active =>' + active);
-
-
+   
     steps.forEach((step, i) =>{
         if(i == (active - 1)){
             step.classList.add('active');
             form_steps[i].classList.add('active');
-            console.log('i =>' + i);
+            
         }else{
             step.classList.remove('active');
             form_steps[i].classList.remove('active');

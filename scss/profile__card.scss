@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  body{
+
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    
+  }
+  
+  .main-site{
+    
+    align-items:center;
+    justify-content:center;
+    min-height: 100vh;
+    background:transparent;
+  
+  }
+  
+  
+  
+  .slider-wrapper {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 30px 15px;
+    
+  }
+  
+  
+  .profile-card .card-item {
+    color: #05b805;
+    user-select: none;
+    margin: 20px;
+    padding: 35px;
+    border-radius: 8px;
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(186, 144, 4, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(220, 224, 221, 0.2);
+  }
+  
+  
+  
+  .profile-card .card-item .user-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    border: 3px solid #ffc022;
+    padding: 4px;
+  }
+  
+  .profile-card .card-item .user-profession {
+    font-size: 1.15rem;
+    color: #141414;
+    font-weight: 500;
+    margin: 14px 0 40px;
+  }
+  
+  .profile-card .card-item .message-button {
+    font-size: 1.25rem;
+    padding: 10px 35px;
+    color: #fafcfa;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #f1b602;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+  }
+  
+  .profile-card .card-item .message-button:hover {
+    background: rgba(75, 234, 93, 0.1);
+    border: 1px solid #78ff87;
+    color: #fff;
+  }
+  
+  .slider-wrapper .swiper-pagination-bullet {
+    background: #6deb93;
+    height: 15px;
+    width: 15px;
+  }
+  
+  .slider-wrapper .swiper-slide-button {
+    color: #fff;
+    margin-top: -50px;
+    transition: 0.2s ease;
+    font-size: 8px;
+    width: 50px;
+    height: 50px;
+    
+  }
+  
+  .slider-wrapper .swiper-slide-button:hover {
+    color: #ffd146;
+  }
+  
+  @media (max-width: 768px) {
+    .slider-wrapper {
+      margin: 0 10px 40px;
+    }
+    .slider-wrapper .swiper-slide-button {
+      display: none;
+    }
+  }/*# sourceMappingURL=profile__card.css.map */

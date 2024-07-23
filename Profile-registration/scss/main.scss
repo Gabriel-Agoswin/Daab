@@ -55,8 +55,19 @@ img{
 }
 */
 
+
+.empty-line{
+    content:"";
+    position: absolute;
+    width: 100px;
+    height:20px;
+    align-items: center;
+    background-color: #3a6;
+    color: #11c666;
+}
+
+
 .cantainer{
-    
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 2em;
