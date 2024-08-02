@@ -551,12 +551,10 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus, .talent
 
 
 
-hr{
-    height: 5px;
+.hr-line{
+  
     width: 100%;
-    background-color: #FF5804;
-    color: #d39910;
-    margin-left: 455px;
+    color: #6a837a;
 }
 
 .profile{
@@ -705,13 +703,10 @@ hr{
 
 
 .footer{
-    background-color: #c4c4c4;
-    color: #ffffff;
-    height: 900px;
-    align-items: center;
+    background-color:#edf0f0;
+    color: #098137;
+    align-items: left;
 
-
-   
 
 }
 
@@ -728,11 +723,36 @@ hr{
     
 }
 
-.footer__content_list li{
+.footer__content_list__links{
+    list-style: none;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: left;
+   
+}
+
+.footer__content_list__links li a{
+    text-decoration: none;
+    color: #606160;
+    cursor: pointer;
+    padding: 20px;
     
    
 }
 
+.footer__content_list__links li a{
+
+    
+}
+
+.footer__bottom{
+    
+}
+
+
+.footer_bottom_left{
+    
+}
 
 
 

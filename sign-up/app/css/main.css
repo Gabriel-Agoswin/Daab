@@ -117,40 +117,72 @@ form .btn-submit.sign-up{
     padding: 10PX;
     width: 100%;
     cursor: pointer;
-    border: 3px solid #56fc6c;
+    border: 2px solid #56fc6c;
     border-radius: 8px;
     font-size: 16px;
     transition: 0.2s ease;
 }
 
+
 form .btn-submit.sign-up:hover{
     color: rgb(235, 238, 239);
-    background-color: #8fe8ab;
-    border: 2px solid #04ff75;
+    background-color: #03b73c;
+    border: 2px solid #3efc93;
    
 }
 
 form .btn-submit.login{
-    background-color:rgb(29, 183, 91);
+    background-color:rgb(13, 179, 85);
     align-items: center;
     color: #f0fffa;
-    padding: 10px;
+    padding: 10PX;
     width: 100%;
     cursor: pointer;
-    border: 2px solid #80ff8a;
+    border: 2px solid #56fc6c;
     border-radius: 8px;
     font-size: 16px;
-  font-weight: bold;
-  transition: 0.2s ease;
+    transition: 0.2s ease;
+
   
 }
+
+.loader{
+    position: absolute;
+    align-items: center;
+    pointer-events: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 70%;
+    border: 1.7px solid transparent;
+    border-left-color: #fff;
+    border-top-color: #fff;
+    border-right-color: #fff;
+    animation :load 1s ease infinite;
+   
+    margin-left: 100px;
+    margin-top: 0;
+  
+   
+
+}
+
+
+@keyframes load{
+    0% {
+        transform: rotate(0turn);
+    }
+    100%{
+        transform: rotate(1turn);
+    }
+}
+/*
 form .btn-submit.login:hover{
     color: rgb(235, 238, 239);
     background-color: #8fe8ab;
     border: 2px solid #04ff75;
    
 }
-
+*/
 form button:hover{
     background-color: #0f9d22;
     border:1px solid #96f4a2;
@@ -249,8 +281,9 @@ form label{
 .sign-box{
     display: flex;
     flex-direction: column;
+    text-align: center;
    
-    margin: auto;
+   
     
   
 }
@@ -259,20 +292,19 @@ form label{
     display: flex;
     flex-direction:row;
     height:40px;
-    padding:0 9.5em;
+    margin: 5px;
     border-radius: 7px;
     outline-color:#96f4a2;
     border: 1px solid #e0e4e7;
     background-color: transparent;    
-   
+   text-align: center;
     align-items: center;
     margin-bottom: 10px;
-   
     cursor: pointer;
     transition: 0.2s ease;
 }
 .sign-with svg{
-  /*  margin-right:-10px;*/
+   margin: 20px;
   
 }
 .sign-with button:hover{    

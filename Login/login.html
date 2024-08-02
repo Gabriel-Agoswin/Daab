@@ -33,12 +33,14 @@
                     <div class="form-con">
                         
 
-                        <h2>Login</h2>
-                        
+                        <h2>Sign in</h2>
+                        <p>Enter the email you used during sign up</p>
                         <div>
                             <label for="">Email / Phone number<small style="color: tomato;">*</small></label>
                             <input type="text" placeholder="Email or Phone number">
                         </div>
+
+                        <!--------
                         <div>
                             <label for="">Password<small style="color: tomato;">*</small></label>
                             <input type="password" placeholder="Password">
@@ -47,30 +49,25 @@
                             </svg>
 
                             
-                        </div>
+                        </div>------------>
                         
                     </div>
-
                     <div class="btn-group">
                        
-                       <button type="button" class="btn-submit login">Next</button>
-                    </div>
+                        <button type="button" class="btn-submit login">Sign in</button>
+                     </div>
 
-                    <style>
-                        .login{
-                         pointer-events: none;
-                            width: 30px;
-                            height: 30px;
-                            border-radius: 50%;
-                            border: 3px solid transparent;
-                            border-left-color: #fff;
-                         
-                        }
+                     <style>
+
+                       
+                
+                       
                     </style>
-
+                    
+                   
                     <div class="sign-box">
 
-                        <h4 style="margin: 20px; margin-bottom: 5px;"> Or <span class="lines"><hr><hr></span> </h4>
+                        <h4 style="margin: 20px; margin-bottom: 5px;"> Or </h4>
                      <div class="sign-with">
                        
                         <button class="Google" >
@@ -115,10 +112,24 @@
 
     
     <script src="../form.js"></script>
+    <script>
+        let loader_text = document.querySelector(".btn-submit.login");
+        loader_text.onclick = function(){
+            this.innerHTML = '<div class="loader"></div> Signing in...';
+            this.style ="margin:5px; display:block; color:#f0fffa; background-color: #8fe8ab; border:2px solid #04ff75; padding:10px; font-size:16px; transition: 0.2s ease;"
+            
+            /*
+
+            setTimeout(()=>{
+                this.innerHTML = " Changes saved";
+               
+            }, 2000)*/
+        }
+     </script>
 
     <script>
        $(document).ready(function(){
-        $(".button").click(function{
+        $(".button").click(function(){
 
             $(this).addClass(".login");
         });
