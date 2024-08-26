@@ -51,16 +51,6 @@ body {
 
 
 
-.cookie{
-    position:static;
-    top:-500;
-    width:100%;
-    height:50px; background-color:#d39910;
-    color: #f0f7e1;
-    text-align: center;
-    margin:40px 0;
-}
-
 
 .header__container{
    /* position:absolute;*/
@@ -688,7 +678,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus, .talent
 
 
 .btn_account{
-     transition: 0.2s ease;
+    transition: 0.2s ease;
    
 }
 
@@ -706,7 +696,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus, .talent
     background-color:#edf0f0;
     color: #098137;
     align-items: left;
-
+    display: block;
 
 }
 
@@ -716,7 +706,6 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus, .talent
     display: flex;
     flex-direction:row ;
     justify-content: space-between;
-    padding: 20px;
     font-size: 15px;
     text-align: center;
    
@@ -735,7 +724,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus, .talent
     text-decoration: none;
     color: #606160;
     cursor: pointer;
-    padding: 20px;
+ 
     
    
 }
