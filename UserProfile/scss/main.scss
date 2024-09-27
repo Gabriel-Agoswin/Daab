@@ -1,0 +1,384 @@
+
+@import "../__variables";
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*,::before, ::after{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Manite, san-serif;
+    background-image: url('../style.svg');
+    background-color: #eefdf5;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.0;
+    color: $dark-color;
+    background-size: cover;
+    background-position: center;
+   
+}
+
+
+a{
+    text-decoration: none;
+    color: inherit;
+
+}
+
+ul{
+    list-style: none;
+}
+
+h1,h2,h3{
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.5rem;
+
+}
+
+/*
+
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+*/
+
+
+.empty-line{
+    content:"";
+    position: absolute;
+    width: 100px;
+    height:20px;
+    align-items: center;
+    background-color: #3a6;
+    color: #11c666;
+}
+
+
+.cantainer{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2em;
+    
+   
+
+}
+
+.form-box{
+    display: flex;
+    flex-direction: column;
+    margin-top:5em;
+    border: 1px solid $lighter-color;
+    border-radius: 15px;
+    background-color: #f0fffa;
+}
+
+.form-box .progress{
+    position: relative;
+    padding: 2em;
+}
+
+.logo{
+   font-size: 1.75em;
+   font-weight: 800;
+   color: $dark-color;
+   padding: 40px 40px;
+   text-align: center;
+}
+
+.logo span{
+    color:$button-background-color;
+}
+
+
+/*---------Process steps---------*/
+
+.progress ul.progress-steps{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+
+}
+
+.progress ul.progress-steps li{
+    position:relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5em;
+
+}
+
+.progress ul.progress-steps li > span{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    font-size: $font-smaller;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1em;
+    border-radius: 50%;
+    background-color: $lighter-color;
+    z-index: 1;
+}
+
+.progress ul.progress-steps li.active >span{
+    color: white;
+    background-color:$circle-background-color;
+    border: 4px solid $main-border-color;
+    z-index: 1;
+}
+
+.progress ul li p{
+    position: absolute;
+    top: -2em;
+    font-size: 12px;
+}
+
+.progress ul.progress-steps li p span{
+    font-size: $font-smaller;
+    color: $blur-text-color;
+    display: none;
+    
+
+}
+
+/*----------form -----*/
+.form-box form{
+    width: 100%;
+    padding: 3em 1em;
+    background-color: white;
+}
+form > div{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form > div p{
+    font-size: $font-smaller;
+    margin-bottom: 2em;
+}
+
+form > div > div:not(.checkbox){
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+form :where(input.select) , .description{
+    height:40px;
+    padding:0 1em;
+    border-radius: 7px;
+    outline-color:$secondary-color;
+    border: 1px solid $lighter-color;
+    background-color: transparent;
+}
+form input, .description, select {
+    height:40px;
+    padding:0 1em;
+    border-radius: 7px;
+    outline-color:$main-button-color;
+    border: 1px solid $lighter-color;
+    background-color: transparent;
+}
+
+form label{
+    font-size: $font-smaller;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+form .grouping{
+    display: flex;
+}
+
+form .grouping input{
+    max-width: 70px;
+    text-align: center;
+    margin-right: 1em;
+}
+
+form .checkbox input{
+    height: auto;
+}
+
+
+form > div:not(.btn-group){
+    display:none;
+-webkit-animation: fadeIn .6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+animation: fadeIn .6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+        -webkit-transform: translateY(10%);
+        transform: translateY(10%);
+
+    }
+
+    100%{
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+form > div.active{
+    display:block;
+}
+
+form > div .bg-svg{
+    width: 60px;
+    height: 50px;
+
+}
+form > .form-one .bg-svg{
+    background:url(../assets/gift-box\icon.svg);
+
+}
+form > .form-two .bg-svg{
+    background:url(../assets/internet\locked.svg);
+
+}
+form > .form-three .bg-svg{
+    background:url(../assets/security-icon.svg);
+
+}
+
+/*-----Button------ */
+/*----we will hide form elements so we can see button styling*/
+
+
+
+.btn-group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+
+.btn-group [class*="btn-"]{
+    background-color:$button-background-color;
+    color:white;
+    padding: 1em 2.5em;
+    border: 2px solid $circle-background-color;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-transition: background-color .3s, border-color .3s ease-out;
+    transition: background-color .3s, border-color .3s ease-out;
+}
+
+
+.btn-group [class*="btn-"]:disabled{
+    /*background-color:#abadac;*/
+    background-color:$lighter-color;
+    border-color:#bdaab0;
+    cursor: text;
+}
+
+
+
+.btn-group [class*="btn-"]:hover:not(:disabled){
+    /*background-color: #52505e;*/
+
+    background-color:$hover-background;
+    border-color: $hover-border;
+    
+}
+
+.btn-group .btn-submit, 
+.form-three.active ~ .btn-group .btn-next{
+    display:none;
+}
+
+.form-three.active ~ .btn-group .btn-submit{
+    display: block;
+}
+
+.form-two.active ~ .btn-group, .form-one.active ~ .btn-group, .form-three.active ~ .btn-group{
+    justify-content: space-between;
+}
+
+
+::placeholder{
+    color: $blur-text-color;
+}
+
+
+.progress ul.progress-steps li:not(:last-child)::before{
+    content:"";
+    position: absolute;
+    left: 20px;
+    bottom:20px;
+    width: 95px;
+    height:2px;
+    background-color: $lighter-color;
+
+}
+
+
+@media screen and (min-width:764px){
+
+    .form-box{
+        flex-direction: row;
+    }
+
+    .form-box .progress{
+        flex: 1 0 35%;
+        min-width: 300px;
+        padding: 3em;
+    }
+
+    .logo{
+        margin: -41px -48px 48px;
+    }
+
+    .progress ul.progress-steps{
+        
+        flex-direction: column;
+        gap:0;
+    }
+
+    .progress ul.progress-steps li:not(:last-child)::before{
+        content:"";
+        position: absolute;
+        left: 20px;
+        top: 30px;
+        width: 2px;
+        height: 95px;
+        background-color: $lighter-color;
+
+    }
+
+    .form-box form{
+        padding:3em;
+        border-radius: 0 15px 15px 0;
+    }
+
+
+    .progress ul li p{
+        position: relative;
+        top: auto;
+        font-size: inherit;
+    }
+
+    .progress ul.progress-steps li p span{
+        display: block;
+    }
+}
