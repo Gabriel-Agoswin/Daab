@@ -17,11 +17,13 @@ html{
 }
 
 body{
-    font-family: Manite, san-serif;
+    
     background-image: url('../style.svg');
     background-color: #eefdf5;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+    color: #899bbd;
+    font-weight: 600;
     line-height: 1.0;
     color: $dark-color;
     background-size: cover;
@@ -80,7 +82,7 @@ img{
     display: flex;
     flex-direction: column;
     margin-top:5em;
-    border: 1px solid $lighter-color;
+    /*border: 1px solid $lighter-color;*/
     border-radius: 15px;
     background-color: #f0fffa;
 }
@@ -219,8 +221,8 @@ form .checkbox input{
 
 form > div:not(.btn-group){
     display:none;
--webkit-animation: fadeIn .6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-animation: fadeIn .6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    -webkit-animation: fadeIn .6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fadeIn .6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 @keyframes fadeIn{
@@ -275,7 +277,7 @@ form > .form-three .bg-svg{
 
 .btn-group [class*="btn-"]{
     background-color:$button-background-color;
-    color:white;
+    color:rgba(43, 40, 55, 0.705);
     padding: 1em 2.5em;
     border: 2px solid $circle-background-color;
     border-radius: 3px;

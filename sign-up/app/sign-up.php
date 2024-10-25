@@ -1,18 +1,104 @@
 
 
 <?php
-/*
-    const accountSid = process.env.TWILIO_ACCOUNT_SID;
-    const authToken = process.env.TWILIO_AUTH_TOKEN;
-    const client = require('twilio')(accountSid, authToken);
 
-    client.messages.create({
-    body: 'You have an appointment with Owl, Inc. on Friday, November 3 at 4:00 PM. Reply C to confirm.',
-    messagingServiceSid: 'MGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-    to: '+15558675310'
-  })
-  .then(message => console.log(message.sid));
-*/
+require_once("connect.php");
+
+   
+    
+
+    //$url = "https://sms.arkesel.com/sms/api/sign-up.php? ";
+
+   
+
+
+    if(isset($_POST['submit'])){
+
+        $phoneNumber = $_POST['PhoneNumber'];
+        $sender = "Duusib";
+        $message = 'Welcome to Duusib Your OTP verification from Duusib is, %otp_code%. where people turn their learning knowledge to wealth ';
+        
+        
+
+
+        $sql = "INSERT into new_user(PhoneNumber)values(?)";
+        $stmt = $conn->prepare($sql);
+        $result= $stmt->execute([$phoneNumber]);
+
+
+        $fields = [
+        'expiry'=> 5,
+        'length'=> 6,
+        'medium'=> 'sms',
+        'message'=>$message,
+        'number'=>$phoneNumber,
+        'sender_id'=>$sender,
+        'type'=>'numeric',
+        ];
+
+        
+        $postvars = '';
+        foreach($fields as $key=>$value) {
+            $postvars .= $key . "=" . $value . "&";
+        }
+    
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+        CURLOPT_URL =>'https://sms.arkesel.com/api/otp/generate',
+        CURLOPT_HTTPHEADER =>array('api-key:eVluenVQRnlDWm5IY3pLSWNIb0o'),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => ' ',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 10,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_POST => 1,
+        CURLOPT_POSTFIELDS => $postvars,
+
+        ));
+
+        $response = curl_exec($curl);
+        curl_close($curl);
+
+       
+
+        $err = curl_error($curl);
+
+        if($err){
+            echo "cURL Error #:".$err;
+
+        }else{
+            echo header('location:verify.php');
+        }
+            
+
+        
+       
+
+
+
+
+    }
+
+    
+   
+
+    
+
+
+
+    
+   
+   
+    
+
+
+   
+
+
+
+
+
 
 ?>
 
@@ -24,13 +110,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daab - Sign_Up</title>
     <link href="https://fonts.gstatic.com" rel="">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <link
-            rel="icon"
-            href="../img/use Brand new logo big.png" width="500px" height="500px"
-            type="image/x-icon"
-        />
+    <link rel="icon" href="../img/use Brand new logo big.png" width="500px" height="500px" type="image/x-icon"/>
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body style="background-color: #dbffee57;">
@@ -43,20 +125,21 @@
                        
                     
                 </div>
-                <form action="">
+                <form action="sign-up.php" method="POST">
                     
-                    <div class="form-con">
-                        <h2>Welcome to Daab</h2>
-                        <p>This data will be used throughout your use of the app
+                    <div class="form-con breadcrumb">
+                        <h2 style="color: #10d060;">Welcome to Daab</h2>
+                        <p>This data will be used throughout your use of the app</p>
 
-                        </p>
-
+                    
+                    
                         <div>
-                            <label for="">Email / Phone number<small style="color: tomato;">*</small></label>
-                            <input type="text" placeholder="Email or Phone number">
+                            <label for=""> Email / Phone number<small style="color: tomato;">*</small></label>
+                            <input type="text" name="PhoneNumber" placeholder="Email or Phone number">
                         </div>
 
                         <!--------
+
                         <div>
                             <label for="">Password<small style="color: tomato;">*</small></label>
                             <input type="password" placeholder="e.g password">
@@ -72,7 +155,7 @@
 
                         -------->
                        
-                        <div class="checkbox" style="margin: 20px;">
+                        <div class="checkbox breadcrumb" style="margin: 20px;">
                             By creating an account, I agree to Daab's Terms of Service and Privacy Policy.
                         </div>
 
@@ -80,7 +163,7 @@
 
                     <div class="btn-group">
                        
-                       <button type="button" class="btn-submit sign-up">Next</button>
+                       <button type="submit" class="btn-submit sign-up" name="submit">Next</button>
                     </div>
 
                     <div class="sign-box">
@@ -90,7 +173,9 @@
                        
                         <button class="Google" >
                            <svg width="20px" height="20px" viewBox="-3 0 262 262"  preserveAspectRatio="xMidYMid">
-                                <path d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027" fill="#4285F4"/><path d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1" fill="#34A853"/><path d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782" fill="#FBBC05"/><path d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251" fill="#EB4335"/></svg>
+                                <path d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027" fill="#4285F4"/><path d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1" fill="#34A853"/>
+                                <path d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782" fill="#FBBC05"/><path d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251" fill="#EB4335"/>
+                            </svg>
                             </span>
                          <span> Continue with  Google</span>
                         </button>
@@ -112,8 +197,17 @@
             </div>
 
             <div class="create__account_link">
-             <a href="/Login/login.php" style="color: green; list-style: none;font-size: 20px;">Login to Daab Account  </a>
+             <a href="/Login/index.php" > Login to Daab Account </a>
            </div>
+
+           <?php
+/*
+            $otp=mt_rand(100000,999999);
+            setcookie("otp", $otp);
+           
+            echo $otp;
+           */
+           ?>
             <div class="rules__and__regulations">
                 <span><svg width="13" height="13" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm306.7 69.1L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
                     English</span>
@@ -140,7 +234,8 @@
         }
      </script>
 
-<script>
+    <script>
+        /*
     $(document).ready(function(){
      $(".button").click(function(){
 
@@ -148,6 +243,8 @@
      });
 
     });
- </script>
+
+    */
+    </script>
 </body>
 </html>

@@ -78,7 +78,7 @@ class CreateDB{
 
     //get product from database
     public function getEvents(){
-        $sql = "SELECT * FROM $this->tablename";
+        $sql = "SELECT * FROM $this-> tablename";
         
         $result =$this->conn->prepare($sql);
         $result->execute();

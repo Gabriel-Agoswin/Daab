@@ -85,7 +85,7 @@
            
             
             <li><button class="C_Login create "><a href="./sign-up/app/sign-up.php" class="rounded" >Sign Up</a></button></li>
-            <li><button class="C_Login create "><a href="./Login/login.php" class="rounded">Login</a></button></li>
+            <li><button class="C_Login create "><a href="./Login/index.php" class="rounded">Login</a></button></li>
           </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -176,7 +176,7 @@
                   
                   <div class="col-md-100">
                     <hr>
-                    <a href="./UserProfile/index.php" type="button" class="mt-1 "> Get this service</a>
+                    <a href="./Profile-registration/app/index.php" type="button" class="mt-1 "> Get this service</a>
                     <small>GHS 100.00</small>
                   </div>
                   
