@@ -4,7 +4,7 @@ This application has the following features
 -User-Dashboard
 -Dashboard
 -sign in page 
--sign up page with  whatsapp otp verification
+-sign up page with  sms otp verification
 -The payment gateway is from paystack Ghanaians can purchase a service with MTN Mobile Money
 
 
